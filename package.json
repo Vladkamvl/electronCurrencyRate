@@ -1,0 +1,68 @@
+{
+  "name": "your-app-name",
+  "version": "0.1.0",
+  "description": "Simple boilerplate for developing an Electron app with React",
+  "author": "vladkamvl <vladkamvl@gmail.com>",
+  "build": {
+    "productName": "CurrentCourse",
+    "copyright": "Copyright © 2019 ${author}",
+    "appId": "react.electron",
+    "extends": null,
+    "files": [
+      "dist/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.21.4",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.5",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.1",
+    "redux": "^4.1.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
+    "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/electron.js",
+    "electron:start": "wait-on tcp:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "^0.0.16",
+    "@rescripts/rescript-env": "^0.0.14",
+    "concurrently": "^6.2.1",
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1",
+    "wait-on": "^6.0.0"
+  }
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.app {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.courses-select {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    width: 300px;
+}
+
+.result {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+.result img{
+    width: 60px;
+    height: 45px;
+    margin-right: 15px;
+}
+.result p span{
+    font-weight: 600;
+}
